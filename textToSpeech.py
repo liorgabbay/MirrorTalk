@@ -1,5 +1,7 @@
 import os
 import io
+import random
+
 from google.cloud import texttospeech
 from pydub import AudioSegment
 from pydub.playback import play
@@ -92,9 +94,9 @@ class TextToSpeech:
             audio -= 25  # Decrease volume by 25dB
 
         play(audio)
-
+        random_number = random.randint(1000, 9999)
         # Save the audio to a file
-        filename = f"audioResponse/output_{self.speech_style}.wav"
+        filename = f"audioResponse/output_{self.speech_style}_{random_number}.wav"
         with open(filename, 'wb') as out:
             out.write(response.audio_content)
         print(f'Audio content written to file "{filename}"')

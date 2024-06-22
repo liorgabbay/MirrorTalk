@@ -86,8 +86,3 @@ class AudioRecorder:
         print(f"Audio content written to file '{new_filename}'")
         return new_filename
 
-
-# for i in range(100):
-#     recording = AudioRecorder()
-#     record = recording.record()
-#     recording.save(record)
